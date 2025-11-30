@@ -1,0 +1,15 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  DAY: day-01
+  PART: part-1
+
+tasks:
+  default:
+    dir: "{{.DAY}}/{{.PART}}"
+    cmds:
+      - echo "Running {{.DAY}}/{{.PART}}..."
+      - go run main.go
+    silent: true
