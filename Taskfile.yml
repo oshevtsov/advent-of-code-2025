@@ -3,14 +3,13 @@
 version: "3"
 
 vars:
-  LANG: go
   DAY: day-01
   PART: part-1
 
 tasks:
-  default:
-    dir: "{{.LANG}}/{{.DAY}}/{{.PART}}"
+  go:
+    dir: "go/{{.DAY}}/{{.PART}}"
     cmds:
-      - echo "Running {{.LANG}}/{{.DAY}}/{{.PART}}..."
+      - echo "[Go] Running {{.DAY}}/{{.PART}}..."
       - go run main.go
     silent: true

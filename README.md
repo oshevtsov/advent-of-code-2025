@@ -20,8 +20,8 @@ In the root of the repository you will find a file called `Taskfile.yml`. In ord
 a solution, make sure you have the [Task CLI](https://taskfile.dev/) installed, and run
 
 ```sh
-task LANG=go DAY=day-01 PART=part-1
+task go DAY=day-01 PART=part-1
 ```
 
-The parameters above are obviously inputs that choose which day and part should the
-solution be run for.
+The parameters above are obviously inputs that choose the programming language, which
+day, and part should the solution be run for.
