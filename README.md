@@ -1,11 +1,12 @@
 # Advent of Code - 2025
 
-My solutions to [Advent of Code](https://adventofcode.com/) 2025. This year - in Golang. Let's Go! 🎅
+My solutions to [Advent of Code](https://adventofcode.com/) 2025. Let's Go! 🎅
 
 ## Structure of solutions
 
-Solution for each day is contained in a folder called, e.g. `day-01`. The folder contains
-three subfolders:
+Solutions are separated by the programming language used to solve it. The solution for
+each day is contained in a folder called, e.g. `day-01`. The folder contains three
+subfolders:
 
 - `inputs`: contains all the inputs specified in the day's puzzle
 - `part-1`: contains the solution to the first part of the puzzle
@@ -19,7 +20,7 @@ In the root of the repository you will find a file called `Taskfile.yml`. In ord
 a solution, make sure you have the [Task CLI](https://taskfile.dev/) installed, and run
 
 ```sh
-task DAY=day-01 PART=part-1
+task LANG=go DAY=day-01 PART=part-1
 ```
 
 The parameters above are obviously inputs that choose which day and part should the
