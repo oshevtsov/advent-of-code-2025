@@ -30,18 +30,21 @@ func ProcessDocumentPart1(path string) int {
 			log.Fatalf("Failed to parse rotation value %s: %v", currRotation[1:], err)
 		}
 
+		// Remove full rotations
+		reminderValue := value % 100
+
 		if direction == 'L' {
-			currDial -= value
+			currDial -= reminderValue
+
+			if currDial < 0 {
+				currDial += 100
+			}
 		} else {
-			currDial += value
-		}
+			currDial += reminderValue
 
-		for currDial < 0 {
-			currDial += 100
-		}
-
-		for currDial > 99 {
-			currDial -= 100
+			if currDial > 99 {
+				currDial -= 100
+			}
 		}
 
 		if currDial == 0 {
@@ -58,5 +61,5 @@ func ProcessDocumentPart1(path string) int {
 
 func main() {
 	numZeroDials := ProcessDocumentPart1("../inputs/input.txt")
-	log.Printf("Answer is: %d", numZeroDials)
+	log.Printf("Answer is: %d", numZeroDials) // Answer is: 1052
 }
