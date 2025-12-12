@@ -17,5 +17,5 @@ tasks:
     dir: "go/{{.DAY}}/{{.PART}}"
     cmds:
       - echo "[Go] Running tests {{.DAY}}/{{.PART}}..."
-      - go test
+      - go test {{.CLI_ARGS}}
     silent: true

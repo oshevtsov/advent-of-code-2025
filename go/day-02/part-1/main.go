@@ -9,8 +9,20 @@ import (
 )
 
 func ProcessRange(start, stop int) int {
-	log.Printf("Start: %d and Stop: %d", start, stop)
-	return 0
+	currVal := start
+
+	var rangeResult int
+	for currVal <= stop {
+		currValStr := strconv.Itoa(currVal)
+
+		length := len(currValStr)
+		if length%2 == 0 && currValStr[:length/2] == currValStr[length/2:] {
+			rangeResult += currVal
+		}
+
+		currVal++
+	}
+	return rangeResult
 }
 
 func ParseRange(currRange string) (int, int) {
@@ -26,7 +38,7 @@ func ParseRange(currRange string) (int, int) {
 		log.Fatal(err)
 	}
 
-	stop, err := strconv.Atoi(bounds[0])
+	stop, err := strconv.Atoi(bounds[1])
 
 	if err != nil {
 		log.Fatal(err)
@@ -40,7 +52,7 @@ func ProcessInput(input string) int {
 
 	var result int
 	for _, currRange := range ranges {
-		start, stop := ParseRange(currRange)
+		start, stop := ParseRange(strings.TrimSpace(currRange))
 		result += ProcessRange(start, stop)
 	}
 
