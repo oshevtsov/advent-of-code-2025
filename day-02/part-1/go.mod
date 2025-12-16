@@ -1,3 +1,3 @@
 module github.com/oshevtsov/advent-of-code-2025/day-02/part-1
 
-go 1.25.4
+go 1.25.5
