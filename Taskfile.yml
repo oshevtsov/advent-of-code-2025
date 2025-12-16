@@ -7,15 +7,15 @@ vars:
   PART: part-1
 
 tasks:
-  go:
-    dir: "go/{{.DAY}}/{{.PART}}"
+  run:
+    dir: "{{.DAY}}/{{.PART}}"
     cmds:
-      - echo "[Go] Running {{.DAY}}/{{.PART}}..."
+      - echo "Running {{.DAY}}/{{.PART}}..."
       - go run main.go
     silent: true
-  go-test:
-    dir: "go/{{.DAY}}/{{.PART}}"
+  test:
+    dir: "{{.DAY}}/{{.PART}}"
     cmds:
-      - echo "[Go] Running tests {{.DAY}}/{{.PART}}..."
+      - echo "Testing {{.DAY}}/{{.PART}}..."
       - go test {{.CLI_ARGS}}
     silent: true

@@ -4,8 +4,7 @@ My solutions to [Advent of Code](https://adventofcode.com/) 2025. Let's Go! 🎅
 
 ## Structure of solutions
 
-Solutions are separated by the programming language used to solve it. The solution for
-each day is contained in a folder called, e.g. `day-01`. The folder contains three
+Solutions are separated by for each day, e.g `day-01`. The folder contains three
 subfolders:
 
 - `inputs`: contains all the inputs specified in the day's puzzle
@@ -20,7 +19,13 @@ In the root of the repository you will find a file called `Taskfile.yml`. In ord
 a solution, make sure you have the [Task CLI](https://taskfile.dev/) installed, and run
 
 ```sh
-task go DAY=day-01 PART=part-1
+task run DAY=day-01 PART=part-1
+```
+
+To run the unit tests which helped develop the solution run
+
+```sh
+task test DAY=day-01 PART=part-1
 ```
 
 The parameters above are obviously inputs that choose the programming language, which
